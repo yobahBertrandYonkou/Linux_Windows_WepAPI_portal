@@ -137,7 +137,7 @@ body{
     float: left;
 }
 
-.loader{
+.loader{ 
     font-size: large;
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
@@ -187,3 +187,5 @@ body{
       border-radius: 50%;
       -webkit-animation: spin 2s reverse infinite;
   }
+
+  

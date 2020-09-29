@@ -73,7 +73,7 @@ if(isset($_POST["cmd"])){
         </div>
 
         <div id="commandprompt">
-            <form action="index.php" method = "POST">
+            <form action="main.php" method = "POST">
                 <input id = "cmd" autocomplete="off" 
                        type="text" name = "cmd" 
                        placeholder="ENTER YOUR COMMANDS HERE!!!" 

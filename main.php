@@ -1,7 +1,7 @@
 <?php 
+session_start();
 $user = "yobah";
-//$url = "https://2e896ca59b85.ngrok.io/cgi-bin/";
-$url = "https://ee6b0ad75293.ngrok.io/cgi-bin/";
+$url = $_SESSION["api_url"]."/cgi-bin/";
 $cmd = "";
 
 //gets system information of server
@@ -19,18 +19,22 @@ if(isset($_POST["cmd"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="css/main_style.css"/>
     <script src = "js/design.js"></script>
+    <script src="https://kit.fontawesome.com/83d4dedb1b.js" crossorigin="anonymous"></script>
     <title>API Provider</title>
 </head>
 <body onload = "loader(); commandPrompt(); menuSessionChecker();">
     <div id="main-container">
         <div id="topnav">
             <ul>
-                <li id = "typing" onclick = "commandPrompt()">TYPING</li>
-                <li>VOICE</li>
-                <li id = "menu" onclick = 'sideBar()'>MENU</li>
-                <li>HELP</li>
-                <li>SYSTEM INFO</li>
-                <li onclick = 'window.open("mail.php", "_blank")'>MAIL</li>
+                <li id = "typing" onclick = "commandPrompt()"><i class = "fa fa-keyboard-o" style="font-size: small;"></i> TYPING</li>
+                <li><i class = "fa fa-microphone" style="font-size: small;"></i> VOICE</li>
+                <li id = "menu" onclick = 'sideBar("sidepanel")'>KUBERNETES</li>
+                <li onclick = 'window.open("docker.php", "_SELF")'><i class="fab fa-docker" style = "font-size: small"></i></i> DOCKER</li>
+                <li onclick = 'window.open("mail.php", "_SELF")'><i class="far fa-paper-plane" style="font-size: small;"></i> MAIL</li>
+                <li><i class="fab fa-aws" style = "font-size: small;"></i> AWS</li>
+                <li><i class="fas fa-file" style = "font-size: small;"></i> DOCUMENTS</li>
+                <li><i class="fas fa-info" style = "font-size: small;"></i> SERVER INFO</li>
+                
                 <div style = "border: 1px solid  #e43f5a;
                               font-family: 'Courier New', Courier, monospace;
                               font-weight: bold;
@@ -45,24 +49,23 @@ if(isset($_POST["cmd"])){
             </ul>
         </div>
         
-        <div id="sidepanel">
+        <div class = "sp" id="sidepanel">
             <ul>
-                <li onclick = 'commandExecutor("date");'>SYSTEM DATE</li>
-                <li onclick = 'commandExecutor("ipconfig")'>IP ADDRESS</li>
-                <li onclick = 'commandExecutor("dir")'>PRESENT DIR</li>
-                <li onclick = 'commandExecutor("time")'>SERVER TIME</li>
-                <li onclick = 'commandExecutor("date")'>5</li>
-                <li onclick = 'commandExecutor("date")'>6</li>
-                <li onclick = 'commandExecutor("date")'>7</li>
-                <li>8</li>
-                <li>9</li>
-                <li>10</li>
-                <li>11</li>
-                <li>12</li>
-                <li>13</li>
-                
+                <li onclick = 'commandExecutor("minikube ip")'>K8S SERVER IP</li>
+                <li onclick = 'commandExecutor("kubectl get pods")'>GET PODS</li>
+                <li onclick = 'commandExecutor("kubectl get deploy")'>GET DEPLOY</li>
+                <li onclick = 'commandExecutor("kubectl get svc")'>GET SVC</li>
+                <li onclick = 'commandExecutor("kubectl get nodes")'>GET NODES</li>
+                <li onclick = 'commandExecutor("kubectl get pvc")'>GET PVC</li>
+                <li onclick = 'commandExecutor("kubectl get pv")'>GET PV</li>
+                <li onclick = 'commandExecutor("kubectl get sc")'>GET SC</li>
+                <li onclick = 'commandExecutor("kubectl describe pods")'>DESC PODS</li>
+                <li onclick = 'commandExecutor("kubectl describe svc")'>DESC SVC</li>
+                <li onclick = 'commandExecutor("kubectl describe nodes")'>DESC NODES</li> 
+                <li onclick = 'commandExecutor("kubectl describe nodes")'>KUBECTL CV</li>              
             </ul>
         </div>
+        
     <div id = "commandline">
         <div id = "outputconsole">
             <iframe onload = 'document.getElementById("loader-wrapper").style.display = "none";' id = "console" style = "border-color: #e43f5a; 

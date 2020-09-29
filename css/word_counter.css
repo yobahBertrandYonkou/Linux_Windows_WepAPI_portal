@@ -1,0 +1,38 @@
+/*#container{
+
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}*/
+textarea{
+    resize: none;
+    height: 100%;
+    width: 100%;
+}
+
+#usertext{
+    background-color: #e43f5a;
+    position: fixed;
+    width: 72.5%;
+    height: 500px;
+}
+
+#word-counts{
+    background-color: #e43f5a;
+    position: relative;
+    background-color: red;
+    float: right;
+    width: 25%;
+    height: 500px;
+}
+
+#buttons{
+    background-color: #e43f5a;
+    float: right;
+}

@@ -10,6 +10,7 @@ body{
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     font-size: large;
+    border-right: 1px solid #121222;
 }
 
 #topnav  li:hover{
@@ -33,7 +34,7 @@ body{
 }
 
 
-#sidepanel ul{
+.sp ul{
     color: white;
     list-style-type: none;
     display: flex;
@@ -45,10 +46,10 @@ body{
     justify-items: center;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    font-size: large;    
+    font-size: 14px;    
 }
 
-#sidepanel li{
+.sp li{
     box-shadow: 0px 1.5px 5px black;
     background-color: #121222;
     width: 175px;
@@ -56,20 +57,31 @@ body{
     transition: 1s ease;
 }
 
-#sidepanel li:hover{
+.sp li:hover{
     cursor: pointer;
     background-color: #162447;
     color: #df6479;
     box-shadow: 1px 3px 10px black;
 }
 
-#sidepanel li:active{
+.sp li:active{
     background-color: #1b1b2f;
 }
 
-#sidepanel{
-    margin: 0 auto;
+#docker-sp{
     width: 0%;
+}
+
+#aws-sp{
+    width: 0%;
+}
+
+#sidepanel{
+    width: 0%;
+}
+
+.sp{
+    margin: 0 auto;
     height: 550px;
     overflow: scroll;
     background-color: #e43f5a;
@@ -188,4 +200,8 @@ body{
       -webkit-animation: spin 2s reverse infinite;
   }
 
-  
+  #logos{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }

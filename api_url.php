@@ -5,9 +5,6 @@ session_start();
 if(isset($_POST["subbtn"])){
     $api = $_POST["url"];
     $_SESSION["api_url"] = $api;
-
-    echo file_get_contents($api."/cgi-bin/connection_test.py");
-    $status = "Connected";
     header("Location: main.php");
 }
 
@@ -31,7 +28,7 @@ if(isset($_POST["subbtn"])){
 </div>
 <div id = "mailsender">       
 <div id = "item">
-        <form method="POST" action = "index.php">
+        <form method="POST" action = "api_url.php">
             <input class = "input" name = "url" type="url" placeholder="Enter your API url here!" value = "<?php echo $api ?>" required autofocus/> <br>
             <input  class = "input" id = "button" type="submit" name = "subbtn" value = '<?php echo $status ?>' title = "Establish connection to api"/>
         </form>

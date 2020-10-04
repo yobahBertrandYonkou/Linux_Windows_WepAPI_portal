@@ -34,6 +34,7 @@ if(isset($_POST["cmd"])){
                 <li><i class="fab fa-aws" style = "font-size: small;"></i> AWS</li>
                 <li><i class="fas fa-file" style = "font-size: small;"></i> DOCUMENTS</li>
                 <li><i class="fas fa-info" style = "font-size: small;"></i> SERVER INFO</li>
+                <li onclick = 'window.open("api_url.php", "_SELF")'>API LK</li>
                 
                 <div style = "border: 1px solid  #e43f5a;
                               font-family: 'Courier New', Courier, monospace;

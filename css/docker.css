@@ -41,6 +41,8 @@ a{
     position: sticky;
     top: 0;
     margin-bottom: 20px;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
 }
 
 #home  a:hover{
@@ -68,7 +70,7 @@ a{
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     width: 90%;
-    border: 5px solid #121222;
+    border: 1px solid #121222;
 }
 
 select{
@@ -78,7 +80,7 @@ select{
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
     width: 100%;
-    border: 5px solid #121222;
+    border: 1px solid #121222;
 }
 #name{
     text-align: center;
@@ -116,9 +118,8 @@ select{
 
 iframe{
     background-color: #e43f5a;
-    resize: vertical;
+    resize: both;
     height: 100px;
     width: 95%;
     margin-top: 5px;
 }
-

@@ -4,7 +4,7 @@ var isOnOfCmd = false;
 sessionStorage.SessionName = "SessionData";
 sessionStorage.setItem("isMenuOn", "false");
 
-var url = "https://4dd9fb3c4848.ngrok.io/cgi-bin/";
+var url = "https://751090201358.ngrok.io/cgi-bin/";
 
 function commandExecutor(command) {
     document.getElementById("loader-wrapper").style.display = "flex";
@@ -14,14 +14,13 @@ function loader(){
     document.getElementById("loader-wrapper").style.display = "none";
 }
 
-
-function sideBar(){
+function sideBar(sb_name){
     if(sessionStorage.getItem("isMenuOn") == "true"){
         document.getElementById("smtbtn").style.width = null;
         document.getElementById("cmd").style.marginLeft = null;
         document.getElementById("cmd").style.width = null;
         document.getElementById("outputconsole").style.width = null;
-        document.getElementById("sidepanel").style.width = "0px";
+        document.getElementById(sb_name).style.width = "0px";
         document.getElementById("menu").style.backgroundColor = null;
         document.getElementById("menu").style.color = null;
         document.getElementById("menu").style.boxShadow = null;
@@ -38,7 +37,7 @@ function sideBar(){
         }
         
         document.getElementById("outputconsole").style.width = "78%";
-        document.getElementById("sidepanel").style.width = "20%";
+        document.getElementById(sb_name).style.width = "20%";
         document.getElementById("menu").style.backgroundColor = "#e43f5a";
         document.getElementById("menu").style.color = "#121222";
         document.getElementById("menu").style.boxShadow = "1px 3px 10px black";
